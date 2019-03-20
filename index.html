@@ -1,0 +1,150 @@
+
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<title>Calculadora  HTML5</title>
+		<meta charset="utf-8">
+		<meta name="Jonatan Arroyo" content="">
+		<meta name="description" content="My first Calculator HTML5">
+        <meta name="keywords" content="Calculadora HTML5">
+        <link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<table>
+		<caption>My 1st Calculator</caption>
+            <tr id="primeraFila" class="bordeNegro">
+                <th>
+                    <input  id="InputA" type="text" value=""  onclick="" onFocus="SelectInput('InputA')" autofocus >
+                </th>
+                <th>
+                    <input  id="InputB" type="text" value="" onclick="" onFocus="SelectInput('InputB')">
+                </th>
+                <th>
+                    <input  id="InputResult" type="text" onFocus="SelectInput('InputResult')" readonly >
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="AssignNumber('7')">7</button>
+                </td>
+                <td>
+                    <button onclick="AssignNumber('8')">8</button>
+                </td>
+                <td>
+                    <button onclick="AssignNumber('9')">9</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <button onclick="AssignNumber('4')">4</button>
+                </td>
+                <td>
+                        <button onclick="AssignNumber('5')">5</button>
+                </td>
+                <td>
+                        <button onclick="AssignNumber('6')">6</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <button onclick="AssignNumber('1')">1</button>
+                </td>
+                <td>
+                        <button onclick="AssignNumber('2')">2</button>
+                </td>
+                <td>
+                        <button onclick="AssignNumber('3')">3</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="operator" onclick="Add()">+</button>
+                </td>
+                <td>
+                    <button   onclick="AssignNumber('0')">0</button>
+                </td>
+                <td>
+                    <button  class="operator" onclick="Subst('-')">-</button>
+                </td>
+            </tr>
+            <tr>
+                    <td>
+                        <button class="operator" onclick="Mult()">*</button>
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <button class="operator"  onclick="Divide('/')">/</button>
+                    </td>
+            </tr>
+            <tr>
+                <td colspan = "3">
+                    <button onclick="Clear()">Clear All</button>
+                </td>
+            </tr>
+        </table>
+        <script>
+            var selectedInput = null;
+            function SelectInput(inputId)
+            {
+                if(inputId !== 'InputResult') 
+                {
+                   // alert("foco invalido: selecciona otro input válido");
+               
+                }
+                SelectedInput = document.getElementById(inputId);
+
+            }
+            function AssignNumber(numAsText)
+               
+                {
+                    if (SelectedInput === null){
+                        alert ("foco invalido: selecciona un input válido");
+                    }
+                    SelectedInput.value += numAsText;
+
+                }
+            function Add()
+            {
+                var a = 1*document.getElementById('InputA').value;
+                var b = 1*document.getElementById('InputB').value;
+
+                document.getElementById('InputResult').value = a + b;
+            }
+            function Subst()
+            {
+                var a = 1*document.getElementById('InputA').value;
+                var b = 1*document.getElementById('InputB').value;
+
+                document.getElementById('InputResult').value = a - b;
+            }
+            function Mult()
+            {
+                var a = 1*document.getElementById('InputA').value;
+                var b = 1*document.getElementById('InputB').value;
+
+                document.getElementById('InputResult').value = a * b;
+            }
+            function Divide()
+            {
+                var a = 1*document.getElementById('InputA').value;
+                var b = 1*document.getElementById('InputB').value;
+
+                document.getElementById('InputResult').value = a / b;
+            }
+
+            function Clear()
+            {
+                document.getElementById('InputA').value="";
+                document.getElementById('InputB').value="";
+                document.getElementById('InputResult').value ="";
+            }
+
+            
+
+        </script>
+        
+
+	</body>
+</html>
